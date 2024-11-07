@@ -142,7 +142,7 @@ class ForecastScreen extends StatelessWidget {
                     return Center(
                       child: Text(
                         state.message,
-                        style: const TextStyle(color: Colors.red),
+                        style: const TextStyle(color: Colors.white),
                       ),
                     );
                   }

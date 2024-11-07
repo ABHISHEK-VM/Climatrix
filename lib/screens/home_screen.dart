@@ -210,7 +210,7 @@ class _HomeScreenState extends State<HomeScreen> {
                                 ),
                               ),
                               Positioned(
-                                bottom: 100,
+                                bottom: 90,
                                 child: Container(
                                   clipBehavior: Clip.antiAlias,
                                   decoration: BoxDecoration(
@@ -282,9 +282,9 @@ class _HomeScreenState extends State<HomeScreen> {
                                 child: Column(
                                   children: [
                                     Image.asset(
-                                                                          'assets/images/default_day.png',
-                                                                          scale: 6,
-                                                                        ),
+                                      'assets/images/default_day.png',
+                                      scale: 6,
+                                    ),
                                     const SizedBox(
                                       height: 12,
                                     ),
@@ -313,12 +313,12 @@ class _HomeScreenState extends State<HomeScreen> {
                                 child: Column(
                                   children: [
                                     Image.asset(
-                                                                          getWeatherIcon(
-                                      state.weather.code,
-                                      state.weather.sunriseTime,
-                                      state.weather.sunsetTime),
-                                                                          scale: 6,
-                                                                        ),
+                                      getWeatherIcon(
+                                          state.weather.code,
+                                          state.weather.sunriseTime,
+                                          state.weather.sunsetTime),
+                                      scale: 6,
+                                    ),
                                     const SizedBox(
                                       height: 12,
                                     ),
@@ -363,7 +363,7 @@ class _HomeScreenState extends State<HomeScreen> {
                     return Center(
                       child: Text(
                         state.message,
-                        style: const TextStyle(color: Colors.red),
+                        style: const TextStyle(color: Colors.white),
                       ),
                     );
                   } else {
@@ -413,39 +413,27 @@ class _HomeScreenState extends State<HomeScreen> {
     DateTime sunset =
         DateTime.fromMillisecondsSinceEpoch(sunsetTimestamp * 1000);
 
-    
     bool isDay = now.isAfter(sunrise) && now.isBefore(sunset);
 
-
     if (isDay) {
-      
       if (conditionCode >= 200 && conditionCode <= 232) {
-        
         return 'assets/images/thunderstorm_day.png';
       } else if (conditionCode >= 300 && conditionCode <= 321) {
-        
         return 'assets/images/drizzle_day.png';
       } else if (conditionCode >= 500 && conditionCode <= 531) {
-        
         return 'assets/images/rain_day.png';
       } else if (conditionCode >= 600 && conditionCode <= 622) {
-       
         return 'assets/images/snow_day.png';
       } else if (conditionCode >= 701 && conditionCode <= 781) {
-        
         return 'assets/images/fog_day.png';
       } else if (conditionCode == 800) {
-       
         return 'assets/images/clear_day.png';
       } else if (conditionCode >= 801 && conditionCode <= 804) {
-        
         return 'assets/images/cloudy_day.png';
       } else {
-       
         return 'assets/images/default_day.png';
       }
     } else {
-      
       if (conditionCode >= 200 && conditionCode <= 232) {
         // Thunderstorm
         return 'assets/images/thunderstorm_night.png';
