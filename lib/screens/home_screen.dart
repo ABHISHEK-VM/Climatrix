@@ -89,6 +89,7 @@ class _HomeScreenState extends State<HomeScreen> {
                               width: 1),
                         ),
                         suffixIcon: IconButton(
+                          tooltip: 'Search Button',
                           padding: const EdgeInsets.only(right: 10),
                           icon: const Icon(Icons.search,
                               color: Color.fromARGB(255, 216, 209, 255)),
@@ -115,6 +116,7 @@ class _HomeScreenState extends State<HomeScreen> {
                         color: const Color.fromARGB(70, 213, 206, 255),
                         borderRadius: BorderRadius.circular(17)),
                     child: IconButton(
+                      tooltip: 'Fetch Current Location Weather',
                       icon: const Icon(
                         Icons.location_on_rounded,
                         size: 26,
@@ -168,7 +170,7 @@ class _HomeScreenState extends State<HomeScreen> {
                         const SizedBox(height: 40),
                         Container(
                           alignment: Alignment.center,
-                          width: MediaQuery.of(context).size.width - 210,
+                          width: MediaQuery.of(context).size.width - 190,
                           height: MediaQuery.of(context).size.height * .4,
                           child: Stack(
                             fit: StackFit.expand,
@@ -367,11 +369,26 @@ class _HomeScreenState extends State<HomeScreen> {
                       ),
                     );
                   } else {
-                    return const Center(
-                      child: Text(
-                        "Enter a city name or fetch current location weather",
-                        style: TextStyle(color: Colors.white),
-                        textAlign: TextAlign.center,
+                    return Center(
+                      child: Column(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        children: [
+                          Image.asset(
+                            'assets/images/clouds.gif',
+                            scale: 2.5,
+                          ),
+                          SizedBox(
+                            height: 30,
+                          ),
+                          Text(
+                            "Enter a city name or \n fetch current location weather",
+                            style: TextStyle(color: Colors.white, fontSize: 15),
+                            textAlign: TextAlign.center,
+                          ),
+                          SizedBox(
+                            height: 60,
+                          ),
+                        ],
                       ),
                     );
                   }
