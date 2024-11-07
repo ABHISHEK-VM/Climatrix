@@ -5,6 +5,8 @@
 
 A simple and intuitive weather app built with Flutter, utilizing the Bloc architecture. This app displays the current weather for the user's location, offers a search functionality for other cities, and provides a 5-day weather forecast displayed in a graphical format.
 
+<img src="assets/images/app_demo.gif" width="600" alt="App Demo">
+
 ## Features
 
 - *Current Location Weather:* Automatically fetches and displays the current weather based on the user's location.
